@@ -9,6 +9,7 @@ public class LoginPage extends BaseLibrary {
 
     @Step("Go to login Modal ")
     public LoginPage goToLoginPage() {
+        driver.findElement(By.cssSelector("[class*='snackbar-btn-reject']")).click();
         driver.findElement(By.xpath("//*[@id=\"login-link\"]/a")).click();
         return this;
     }
