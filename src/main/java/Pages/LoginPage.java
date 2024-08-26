@@ -36,6 +36,7 @@ public class LoginPage extends BaseLibrary {
         Thread.sleep(3000);
         String profileName = driver.findElement(By.cssSelector("[class='user-profile__name']")).getText();
         Assert.assertEquals(profileName, namecheck);
+        screenshot();
         return this;
     }
 
@@ -43,6 +44,7 @@ public class LoginPage extends BaseLibrary {
     public LoginPage emailErrorCheck() {
         String errorMessage = driver.findElement(By.cssSelector("[ class='invalid']")).getText();
         Assert.assertEquals(errorMessage, emailErrorMessage);
+        screenshot();
         return this;
     }
 
@@ -50,6 +52,7 @@ public class LoginPage extends BaseLibrary {
     public LoginPage fillEmailOrPasswordwrongCheck(){
         String errorMessage = driver.findElement(By.cssSelector("[ id='error-content']")).getText();
         Assert.assertEquals(errorMessage, passwordErrorMessage);
+       screenshot();
         return this;
     }
 
@@ -57,12 +60,14 @@ public class LoginPage extends BaseLibrary {
     public LoginPage wrongPasswordMax(){
         String errorMessage = driver.findElement(By.cssSelector("[ id='error-content']")).getText();
         Assert.assertEquals(errorMessage, passwordErrorMessageMax);
+        screenshot();
         return this;
     }
     @Step("Wrong password Min")
     public LoginPage wrongPasswordMin(){
         String errorMessage = driver.findElement(By.cssSelector("[ id='error-content']")).getText();
         Assert.assertEquals(errorMessage, passwordErrorMessageMin);
+        screenshot();
         return this;
     }
 }
