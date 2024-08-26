@@ -43,6 +43,7 @@ public class FlighSearchPage extends BaseLibrary {
             month = cal.get(Calendar.MONTH);
         }
         driver.findElement(By.xpath("//td[@data-month='" + month + "' and @data-year='" + year + "']/a[text()='" + day + "']")).click();
+       screenshot();
         return this;
     }
 

@@ -19,11 +19,11 @@ public class FlightSearchTests extends BaseTest {
         flighSearchPage
                 .chooseDate()//This Step won't work if it is not called first.
                 .enterDepatureCity();
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         flighSearchPage
                 .enterDesCity()
                 .clickSearchButton();
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         flighSearchPage
                 .choosefirstFlight();
     }

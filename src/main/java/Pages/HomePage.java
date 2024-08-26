@@ -10,10 +10,12 @@ import java.util.List;
 
 public class HomePage extends BaseLibrary {
     @Step("Check Home Content card points ")
-    public HomePage clickHomeContents() {
+    public HomePage clickHomeContents() throws InterruptedException {
         String cardTitle = driver.findElement(By.cssSelector("[class='home__properties__item__title']")).getText();
         Assert.assertEquals(homecontentcardtitle1, cardTitle);
+        Thread.sleep(3000);
         driver.findElement(By.cssSelector("[class='home__properties__item__title']")).click();
+        screenshot();
         String pageTitle = driver.findElement(By.cssSelector("[class='page-stepper__item__info__primary']")).getText();
         Assert.assertEquals(homecontentcard1, pageTitle);
         return this;
@@ -29,6 +31,7 @@ public class HomePage extends BaseLibrary {
             WebElement title = card.findElement(By.cssSelector("[class='home__campaign__item__content__header']"));
             Assert.assertTrue(title.isDisplayed(), "The card should contain a title.");
         }
+        screenshot();
         return this;
     }
 
