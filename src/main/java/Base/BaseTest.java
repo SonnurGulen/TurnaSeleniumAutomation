@@ -8,22 +8,20 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 public class BaseTest extends Data {
-    @BeforeMethod
-
-    public void openBrowser() {
+  @BeforeMethod
+    public void openBrowser(){
+        //String tarayici = "firefox";
         String tarayici = System.getProperty("browser");
         if (tarayici.equals("chrome")) {
             driver = new ChromeDriver();
-            driver.manage().window().maximize();
-            driver.manage().deleteAllCookies();
-            driver.findElement(By.cssSelector("[class*='snackbar-btn-reject']")).click();
-        } else if (tarayici.equals("opera")) {
+        }
+        else if (tarayici.equals("firefox")) {
             driver = new FirefoxDriver();
-            driver.manage().window().maximize();
-            driver.manage().deleteAllCookies();
-            driver.findElement(By.cssSelector("[class*='snackbar-btn-reject']")).click();
-        } else if (tarayici.equals("edge")) {
-        driver = new EdgeDriver();
+        }
+        else if (tarayici.equals("edge"))
+            driver = new EdgeDriver();
+
+
         driver.get(url);
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
