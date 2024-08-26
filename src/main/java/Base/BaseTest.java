@@ -9,10 +9,21 @@ public class BaseTest extends Data{
     @BeforeMethod
 
     public void openBrowser(){
-     ChromeOptions op = new ChromeOptions();
-        op.addArguments("--disable-notifications");
-        driver= new ChromeDriver(op);
+        String broserVar = System.getProperty("browser");
+        if (broserVar.equals("chrome")) {
+            ChromeOptions op = new ChromeOptions();
+            op.addArguments("--disable-notifications");
+            driver= new ChromeDriver(op);
+        }
+        else if (broserVar.equals("firefox")) {
+            driver = new FirefoxDriver();
+        }
+        else if (broserVar.equals("edge"))
+            driver = new EdgeDriver();
+    }
+
         driver.get(url);
+   
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
         driver.findElement(By.cssSelector("[class*='snackbar-btn-reject']")).click();
