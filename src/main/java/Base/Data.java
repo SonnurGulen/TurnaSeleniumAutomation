@@ -3,7 +3,7 @@ import org.openqa.selenium.WebDriver;
 
 public class Data {
     public static WebDriver driver;
-    public String url= "https://www.turna.com/";
+    public String url = System.getProperty("url");
     public String email="glnsnnr@gmail.com";
     public String password="S.G.123";
     public String namecheck="Sonnur gülen";
