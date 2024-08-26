@@ -22,7 +22,8 @@ public class BaseTest extends Data {
             driver.manage().window().maximize();
             driver.manage().deleteAllCookies();
             driver.findElement(By.cssSelector("[class*='snackbar-btn-reject']")).click();
-        } else if (tarayici.equals("edge")) driver = new EdgeDriver();
+        } else if (tarayici.equals("edge")) {
+        driver = new EdgeDriver();
         driver.get(url);
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
