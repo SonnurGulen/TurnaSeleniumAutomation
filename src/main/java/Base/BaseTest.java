@@ -25,7 +25,7 @@ public class BaseTest extends Data {
         driver.get(url);
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
-        driver.findElement(By.cssSelector("[class*='snackbar-btn-reject']")).click();
+
     }
 
     @AfterMethod
